@@ -36,12 +36,12 @@ module Middleman
 
           puts "\nReady for deployment to #{environment}: #{server}\n\n"
 
-          if not ["yes", "y"].include?(ask("OK? [Yes|y|Y|No|n|N] > ").downcase)
-            puts "\nExiting."
-            exit(1)
-          else
-            puts
-          end
+          # if not ["yes", "y"].include?(ask("OK? [Yes|y|Y|No|n|N] > ").downcase)
+          #   puts "\nExiting."
+          #   exit(1)
+          # else
+          #   puts
+          # end
 
           puts "Running rsync..."
           run("rsync #{config[:rsync_flags]} ./build/ #{config[:user]}@#{server}:#{config[:path]}")
